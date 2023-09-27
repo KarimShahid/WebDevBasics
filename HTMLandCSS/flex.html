@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        /* use in parent class. Affects the child */
+        flex-wrap: wrap;
+        /* tyo line ma atena bhane
+        next line maa janu Flex-wrap: wrap is used.  */
+        background-color: steelblue;
+        /* flex-direction: column; */
+      }
+      .container > div {
+        border: 1px solid black;
+        margin: 5px;
+        width: 24.2%;
+        height: 300px;
+        background-color: orangered;
+      }
+      .container > .item {
+        margin-bottom: 30px;
+      }
+      .container-2 {
+        background-color: aqua;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .container-2 > div {
+        /* border: 1px solid black; */
+        background-color: beige;
+        margin-bottom: 100px;
+        color: bisque;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .one,
+      .three {
+        margin: 0 100px 10px 10px;
+      }
+      .one {
+        width: 70%;
+        height: 300px;
+      }
+
+      .two {
+        width: 10%;
+        height: 300px;
+      }
+
+      .three {
+        width: 70%;
+        height: 300px;
+      }
+      .four {
+        width: 15%;
+        height: 300px;
+      }
+      .item {
+        background-color: bisque;
+        width: 45.5%;
+        height: 35vh;
+        /* border: 1px solid black; */
+        margin: 10px;
+        color: black;
+        font-size: 30px;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+        transition: all 0.1s;
+      }
+      img:hover {
+        transform: scale(1.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">one</div>
+      <div class="item">two</div>
+      <div class="item">three</div>
+      <div class="item">four</div>
+      <div class="item">five</div>
+      <div class="item">six</div>
+      <div class="item">seven</div>
+      <div class="item">eight</div>
+    </div>
+    <hr />
+
+    <div class="container-2">
+      <div class="one">
+        <div class="item">
+          <img src="/images/man music hero.jpeg" alt="" />
+        </div>
+        <div class="item">
+          <img
+            src="/images/getty_626660256_2000108620009280158_388846.jpeg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="two"></div>
+      <div class="three">
+        <div class="item">
+          <img src="/images/spotify_sketch_4-11.png" alt="" />
+        </div>
+        <div class="item">
+          <img src="/images/shutterstock_1886570575.0.jpg" alt="" />
+        </div>
+      </div>
+      <div class="four"></div>
+    </div>
+  </body>
+</html>

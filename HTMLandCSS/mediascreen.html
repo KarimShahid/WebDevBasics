@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        background-color: aqua;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 0;
+        justify-content: space-evenly;
+      }
+      .container .demo {
+        /* height: 50vh; */
+        /* 1vh = 10px */
+        height: 300px;
+        width: 24%;
+        background-image: linear-gradient(to top right, green, orange);
+      }
+      /* sano dekhi thulo: min-wdith
+            thulo dkehi sano: max-width */
+      @media screen and (max-width: 992px) {
+        .container {
+          background-color: teal;
+        }
+        .container .demo {
+          width: 49%;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .container {
+          background-color: purple;
+        }
+        .container .demo {
+          width: 100%;
+          background: linear-gradient(
+            to bottom left,
+            orange,
+            purple,
+            yellow,
+            red
+          );
+          margin: 0 0 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+    </div>
+  </body>
+</html>

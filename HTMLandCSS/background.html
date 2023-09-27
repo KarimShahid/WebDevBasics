@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <style>
+      .demo-1,
+      .demo-2,
+      .demo-3,
+      .demo-4 {
+        margin-top: 5px;
+      }
+      .demo-first {
+        height: 200px;
+        width: 500px;
+        background-image: linear-gradient(to top right, orange, cyan, skyblue);
+        /* to right, left, top , top left, top right, top left, bottom left, bottom right */
+        /* linear-gradient shoudl have more than one color */
+        /* PRACTISE ALL THE LINAER GRADIENT */
+      }
+      .demo-1 {
+        height: 200px;
+        width: 500px;
+        background-image: linear-gradient(to top left, orange, cyan, skyblue);
+      }
+      .demo-2 {
+        height: 200px;
+        width: 500px;
+        background-image: linear-gradient(
+          to bottom left,
+          orange,
+          cyan,
+          skyblue
+        );
+      }
+      .demo-3 {
+        height: 200px;
+        width: 500px;
+        background-image: linear-gradient(
+          to bottom right,
+          orange,
+          cyan,
+          skyblue
+        );
+      }
+      .demo-4 {
+        height: 200px;
+        width: 500px;
+        background-image: linear-gradient(to top, orange, cyan, skyblue);
+      }
+      .demo-second {
+        height: 700px;
+        width: 700px;
+        background-image: url("/images/getty_626660256_2000108620009280158_388846.jpeg");
+        /* used when image covers a huge area */
+        background-size: cover;
+        margin-top: 10px;
+        background-attachment: fixed;
+        background-position: center;
+      }
+      .demo-third {
+        height: 500px;
+        width: 500px;
+        background-image: linear-gradient(
+            rgba(0, 255, 0, 0.5),
+            rgb(255, 255, 0.5, 0.5),
+            rgb(255, 0, 0.5, 0.5)
+          ),
+          url("/images/spotify_sketch_4-11.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-first"></div>
+    <div class="demo-second"></div>
+    <div class="demo-third"></div>
+    <div class="demo-1"></div>
+    <div class="demo-2"></div>
+    <div class="demo-3"></div>
+    <div class="demo-4"></div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align items</title>
+    <style>
+      .container {
+        background-color: aqua;
+        display: inline-flex;
+        align-items: center;
+        /* height: 500px;  */
+        align-items: flex-end;
+      }
+      .demo-item {
+        height: 200px;
+        width: 200px;
+        background-color: chocolate;
+        margin: 5px;
+      }
+      .one {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo-item"></div>
+      <div class="demo-item"></div>
+      <div class="demo-item one"></div>
+      <div class="demo-item"></div>
+    </div>
+  </body>
+</html>

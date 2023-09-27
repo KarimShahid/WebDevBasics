@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative Position</title>
+    <style>
+      .demo-container {
+        height: 300px;
+        width: 500px;
+        background-color: dodgerblue;
+        position: relative;
+        bottom: 30px;
+        left: 30px;
+        /* bottom dekhi 30px maathi jaancha */
+        /* left dekhi 30px right */
+        /* Relative = Aafno positon dekhi move huncha. */
+        /* aafno original space is reserved. Other divs cannot come in its space */
+      }
+      .normal {
+        height: 300px;
+        width: 500px;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-container"></div>
+    <div class="normal"></div>
+  </body>
+</html>

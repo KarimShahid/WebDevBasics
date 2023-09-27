@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky and Fixed Postion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        background-color: #232f23;
+        color: whitesmoke;
+        text-align: center;
+        font-size: 40px;
+        text-decoration: underline blue;
+        text-transform: capitalize;
+        padding: 20px;
+      }
+      nav {
+        background-color: #397;
+        color: whitesmoke;
+        text-align: center;
+        font-size: 40px;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+      }
+      main {
+        height: 800px;
+        background-color: orangered;
+        /* position: relative; */
+      }
+      footer {
+        background-color: dodgerblue;
+        color: antiquewhite;
+        font-size: 15px;
+        text-align: center;
+        padding: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .movie {
+        position: fixed;
+        left: 10px;
+        top: 25px;
+        font-size: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>This is header</header>
+
+    <nav>This is nav</nav>
+    <main>
+      <button class="movie">
+        <a href="https://www1.dramacool.ee/drama-detail/carter" target="_blank">
+          Movie
+        </a>
+      </button>
+    </main>
+
+    <footer>&copy; Copyright 2022</footer>
+  </body>
+</html>

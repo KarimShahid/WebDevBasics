@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scale</title>
+    <style>
+      .img-container {
+        height: 300px;
+        width: 500px;
+        border: 5px solid red;
+        overflow: hidden;
+        /* the image beyond the border should not show */
+      }
+      .img-container img {
+        /* descendant selector takes all the child and sub child classes of the parent class */
+        height: 100%;
+        width: 100%;
+        transition: all 0.5s;
+        filter: grayscale(100);
+      }
+      .img-container:hover img {
+        transform: scale(1.5);
+        /* Scale is always 1. If greater than 1, pic will zoom. 
+        If less than one, it will decrease. */
+        filter: none;
+        /* removes filter during hovering */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-container">
+      <img src="/images/man music hero.jpeg" alt="" />
+    </div>
+  </body>
+</html>

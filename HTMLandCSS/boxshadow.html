@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Shadow</title>
+    <style>
+      .container-first {
+        height: 200px;
+        width: 500px;
+        background-color: orangered;
+        /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); */
+        /* horizontal_alignment vertical_alignment blur */
+        /* a = Alpha = opacity. (0-1) */
+
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5),
+          -10px -10px 15px rgba(0, 0, 0, 0.5);
+        /* Shadow in both top and bottom */
+      }
+
+      .container-second {
+        height: 300px;
+        width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        transition: all 0.1s; /* This is for hover animation */
+      }
+      .container-second:hover {
+        /* transform: translateY(-10px);  */
+        /* y = up and down. X = left to right */
+        transform: translateX(10px);
+        background-color: aquamarine;
+        margin-top: 10%;
+        text-shadow: 7px 7px 15px black;
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-first"></div>
+    <div class="container-second">Hello World</div>
+
+    <!-- Need to TEXT_SHADOW! -->
+  </body>
+</html>

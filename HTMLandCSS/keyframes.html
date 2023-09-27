@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Frames</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: dodgerblue;
+      }
+      .container {
+        height: 300px;
+        width: 500px;
+        margin: 20px auto;
+        border: 1px solid black;
+        animation: up-down ease-in-out 2s infinite alternate-reverse;
+        /* up-down is the name of the keyframe */
+      }
+      .container img {
+        height: 100%;
+        width: 100%;
+      }
+
+      @keyframes up-down {
+        0% {
+          transform: translateY(100px);
+        }
+        25% {
+          transform: translateX(50px);
+        }
+        75% {
+          transform: translateX(-50px);
+          /* transform: rotateX(50deg); */
+          /* transform: scale(1.5); */
+        }
+        100% {
+          transform: translateY(-50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/images/spotify_sketch_4-11.png" alt="" />
+    </div>
+  </body>
+</html>

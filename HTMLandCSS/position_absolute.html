@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Absolute Position</title>
+    <style>
+      .container-first {
+        height: 300px;
+        width: 400px;
+        background-color: aqua;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+      }
+      .img-container {
+        height: 300px;
+        width: 500px;
+        margin: auto;
+        position: relative;
+        /* for child (button) as child class has position absolute
+        which is dependent upon the parent class */
+      }
+      .img-container img {
+        height: 100%;
+        width: 100%;
+      }
+      button {
+        background-color: orangered;
+        color: #fff;
+        font-size: 35px;
+        border: none;
+      }
+      .left {
+        position: absolute;
+        left: 0;
+        top: 40%;
+      }
+      .right {
+        position: absolute;
+        right: 0;
+        top: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-first"></div>
+    <div class="img-container">
+      <img src="/images/man music hero.jpeg" alt="" />
+      <button class="left">&lt;</button>
+      <!---the is the < symbol--->
+      <button class="right">&gt;</button>
+      <!---the is the > symbol--->
+    </div>
+  </body>
+</html>

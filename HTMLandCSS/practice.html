@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practise</title>
+    <script
+      src="https://kit.fontawesome.com/95377986ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      a .click {
+        text-decoration: none;
+        display: inline-block;
+      }
+      .front-display {
+        height: 280px;
+        width: 270px;
+        background-color: gainsboro;
+        margin: 30px;
+        box-shadow: 9px 6px 22px 0 rgb(0 0 0 / 8%);
+      }
+      .course-title {
+        height: 100px;
+        width: 100%;
+        background: linear-gradient(240deg, #d677c0, #41bbbd);
+        color: white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* To make sure that hover_dsiplay appears
+      when front-display is hovered */
+      .front-display:hover + .hover_display {
+        /* + is used when parent child relation is not there */
+        background-color: rgb(0, 0, 0, 0.8);
+        display: block;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+      }
+      .hover_display {
+        display: none;
+        height: 280px;
+        width: 270px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        /* padding: 10px 0 0 30px; */
+        padding: 20px;
+        margin: 30px;
+      }
+      .italics {
+        font-style: italic;
+        font-size: 12px;
+      }
+      .details {
+        border: solid 1px #ffffff;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 40px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
+      .text,
+      .italics,
+      ul {
+        padding-left: 5px;
+        display: block;
+      }
+
+      .img-container {
+        width: 300px;
+        height: 200px;
+        margin: 30px;
+        position: relative;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+      }
+      .img-container img {
+        width: 100%;
+        height: 100%;
+      }
+      .img-hover {
+        display: none;
+      }
+      .img-container:hover .img-hover {
+        /*  + is not used as img-container and img-hover are parent child */
+        background-color: rgb(0, 0, 0, 0.8);
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 200px;
+        color: antiquewhite;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .first_container {
+        height: 300px;
+        width: 300px;
+        background-color: aqua;
+        margin: auto;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+        position: relative;
+      }
+      .first_container .first-div {
+        background: linear-gradient(to top right, orange, rgba(56, 176, 56));
+        height: 100px;
+      }
+      .second-div h2,
+      .first_container .second-div p {
+        padding-top: 20px;
+      }
+
+      .overlay-div {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: none;
+      }
+      .first_container:hover .overlay-div {
+        display: block;
+      }
+      .overlay-div button {
+        padding: 10px;
+        border-color: white;
+        color: antiquewhite;
+        background-color: black;
+        position: absolute;
+        bottom: 150px;
+        right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- To make the div a hyperlink -->
+    <a
+      href="https://www.edureka.co/executive-programs/machine-learning-and-ai"
+      target="_blank"
+      class="click"
+    >
+      <!-- the visible front cover -->
+      <div class="front-display">
+        <div class="course-title">AI Master Class</div>
+      </div>
+
+      <!-- seen when hover -->
+      <div class="hover_display">
+        <span class="text">
+          Next Batch <br />
+          In 0 days - 18th August <br />
+        </span>
+        <br />
+        <span class="italics">
+          <span class="h">What will I learn?</span> <br />
+        </span>
+        <br />
+        <ul>
+          <li>Python</li>
+          <li>Data Science</li>
+          <li>Machine Learning</li>
+          <li>Artifiical Intelligence</li>
+        </ul>
+        <span class="details">View Details</span>
+      </div>
+    </a>
+
+    <div class="second-box">
+      <div class="img-container">
+        <img src="/images/shutterstock_1886570575.0.jpg" alt="" />
+        <div class="img-hover">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut maiores
+          architecto itaque laudantium fuga exercitationem, dolorum eum porro et
+          laborum repellendus unde voluptate harum earum praesentium magnam quod
+          incidunt voluptatem.
+        </div>
+      </div>
+    </div>
+
+    <!-- Taught in class -->
+    <div class="first_container">
+      <div class="first-div"></div>
+      <div class="second-div">
+        <h2>Cyber Security Course</h2>
+        <p>reviews <i class="fa-solid fa-vault"></i></p>
+
+        <div class="overlay-div">
+          <a
+            href="https://www.edureka.co/cybersecurity-certification-training"
+            target="_blank"
+          >
+            <button>View Details</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
