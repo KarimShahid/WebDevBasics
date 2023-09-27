@@ -1,7 +1,7 @@
 # WebDevBasics
-Basics of HTML/CSS
+Basics of HTML/CSS/JS
 
-This repo contains basics of web development like HTML and CSS only.
+This repo contains basics of web development like HTML CSS and JS.
 Basic projects can also be found here.
 
 <br/><br/>
