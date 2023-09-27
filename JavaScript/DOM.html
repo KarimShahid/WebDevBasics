@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .container {
+        margin: auto;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+      }
+      #red {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin-right: 10px;
+      }
+      #yellow {
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+        margin-right: 10px;
+      }
+      #green {
+        height: 100px;
+        width: 100px;
+        background-color: green;
+      }
+      #clear-game {
+        margin: auto;
+        margin-top: 2em;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="title">
+      <h2 id="text">Hello Night</h2>
+    </div>
+    <div class="container">
+      <button id="red" class="squared" value="red"></button>
+      <button id="yellow" class="squared" value="yellow"></button>
+      <button id="green" class="squared" value="green"></button>
+    </div>
+    <button id="clear-game">Clear Game</button>
+    <script>
+      console.log("Hello World");
+      let titleDiv = document.getElementById("title");
+      console.log("before", titleDiv.innerText);
+
+      //   updating HTML from JS
+      let message = "GoodBye my lover!";
+      titleDiv.innerText = message;
+      console.log("after:", titleDiv.innerText);
+
+      titleDiv.innerHTML = `<p>${message}<p> `;
+
+      //   document.getElementById("text").innerHTML = "Yeobo seyoo";
+
+      titleDiv.style.color = "steelblue";
+
+      let redDiv = document.getElementById("red");
+      let yellowDiv = document.getElementById("yellow");
+      let greenDiv = document.getElementById("green");
+
+      //   redDiv.onclick = () => {
+      //     console.log("hi");
+      //     console.log("You have clicked Red");
+      //   };
+      //   yellowDiv.onclick = () => {
+      //     console.log("hi");
+      //     console.log("You have clicked Yellow");
+      //   };
+      //   greenDiv.onclick = () => {
+      //     console.log("hi");
+      //     console.log("You have clicked Green");
+      //   };
+      const timesClicked = { red: 0, yellow: 0, green: 0 };
+      const squares = document.querySelectorAll(".squared");
+      squares.forEach((sqs) => {
+        sqs.onclick = () => {
+          timesClicked[sqs.value] += 1;
+          sqs.innerText = timesClicked[sqs.value];
+          //   console.log(sqs.value);
+        };
+      });
+
+      const clearScores = () => {
+        timesClicked.red = 0;
+        timesClicked.yellow = 0;
+        timesClicked.green = 0;
+        squares.forEach((sq) => {
+          sq.innerText = "";
+        });
+      };
+
+      const clearGameBtn = document.getElementById("clear-game");
+      clearGameBtn.onclick = () => clearScores();
+    </script>
+  </body>
+</html>

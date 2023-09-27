@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 shadow-lg mt-3">
+          <form action="" class="p-3" onsubmit="return validForm()">
+            <div class="mb-3">
+              <label for="fname">FirstName</label>
+              <input
+                type="text"
+                name="first-name"
+                id="fname"
+                class="form-control"
+                onkeyup="fnameValidate()"
+              />
+              <span id="fnameMsg"></span>
+            </div>
+
+            <div class="mb-3">
+              <label for="lname">LastName</label>
+              <input
+                type="text"
+                name="last-name"
+                id="lname"
+                class="form-control"
+                onkeyup="lnameValidate()"
+              />
+              <span id="lnameMsg"></span>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+                onkeyup="emailValidate()"
+              />
+              <span id="emailMsg"></span>
+            </div>
+
+            <div class="mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-control"
+                onkeyup="passwordValidate()"
+              />
+              <span id="pwdMsg"></span>
+            </div>
+
+            <div class="mb-3">
+              <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="formvalidation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onkeyup</title>
+  </head>
+  <body>
+    <input type="password" name="" id="pwd" onkeyup="demoFunction()" />
+    <h2 id="show"></h2>
+
+    <input type="password" name="" id="pass" onkeydown="demo()" />
+    <h3 id="back"></h2>
+
+    <h1></h1>
+    <script>
+      const demoFunction = () => {
+        const input_value = document.getElementById("pwd").value;
+        document.querySelector("#show").innerHTML = input_value;
+      };
+
+      const demo = () => {
+        const value = document.querySelector("#pass").value;
+        document.querySelector("#back").innerHTML = value;
+      };
+    </script>
+  </body>
+</html>

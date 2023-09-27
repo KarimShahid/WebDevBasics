@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises 2</title>
+  </head>
+  <body>
+    <pre>
+        You order 🍅 soup
+        you continue with the convo 🗣️
+        RESOLVED - Server then brings the soup when ready
+        REJECTED - No soup
+    </pre>
+    <script>
+      const func = () => {
+        // console.log("soup");
+      };
+      //   console.log("Start Convo");
+      setTimeout(func, 2000);
+      //   console.log("Still Speaking");
+
+      //   Promise
+      const promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          isReady = [true, false][Math.floor(Math.random() * 2)];
+          // turnery operator
+          //   the first part runs if true the last part runs if False
+          isReady ? resolve("Soup is ready 🥣!") : reject("❌ No Soup Today");
+        }, 2000);
+      });
+
+      //   console.log(
+      //     promise1
+      //       .then((success) => console.log({ success }))
+      //       .catch((error) => console.log({ error }))
+      //   );
+
+      //   This is for async await the above code
+      // const getSoup = async () =>{
+      //     const one = await promise1
+      //     console.log(one)
+      // }
+
+      const getSoup = async () => {
+        const data = { rating: null, tip: null, pay: null, review: null };
+        try {
+          const soup = await promise1;
+          console.log(soup);
+          data.rating = 5;
+          data.tip = 0.2;
+          data.pay = 10;
+          data.review = 5;
+          return data;
+        } catch (error) {
+          console.log(error);
+          data.rating = 1;
+          data.tip = 0;
+          data.pay = 0;
+          data.review = 1;
+          return data;
+        }
+      };
+      getSoup().then((value) => console.log(value));
+      //   will use .then() if sth is to be returned from the async function
+
+      //for example
+      const sum = async (a, b) => {
+        return a + b;
+      };
+      //   sum(3, 1).then((s) => console.log(s, "sum"));
+
+      //   instead of .then() i can create new async function
+      const getSum = async (j, k) => {
+        const s = await sum(j, k);
+        console.log(s);
+      };
+      getSum(6, 5);
+
+      //   OR i can directly use await in one async function
+      //   const sums = async (a, b) => {
+      //     s = await (a + b);
+      //     console.log(s, "sums");
+      //   };
+      //   sums(1, 4);
+
+      //   console.log(
+      //     "fetch:",
+      //     fetch("https://dog.ceo/api/breeds/image/random") //promise
+      //       .then((response) => response.json()) //promise
+      //       .then((data) => console.log(data))
+      //   );
+
+      //   used for API's, fetching and posting, database work. USe for anything you wait for.
+      //   Rules for async / await
+      // 1. Create a function
+      // 2. must use keyword async
+      // 3. must use keyword await
+      const getDog = async () => {
+        const url = "https://dog.ceo/api/breeds/image/random";
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        // console.log(data.message);
+      };
+      getDog();
+    </script>
+  </body>
+</html>

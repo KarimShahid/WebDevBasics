@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      const filterData = numbers.filter((num) => num > 20 && num < 90);
+
+      //   const filterData = numbers.filter((num) => {
+      //     return num > 20 && num < 90
+      // };
+      document.write(`${filterData} <br>`);
+
+      // reduce()
+      const euros = [29.76, 41.85, 46.5];
+      const sum = euros.reduce((total, amount) => total + amount);
+      document.write(sum);
+    </script>
+  </body>
+</html>

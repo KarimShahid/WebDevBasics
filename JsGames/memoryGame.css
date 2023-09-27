@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+#grid {
+  /* display: flex; */
+  width: 700px;
+  height: 300px;
+  margin: auto;
+  /* flex-wrap: wrap;
+  justify-content: center; */
+}
+
+.box {
+  text-align: center;
+}
+img {
+  margin: 1px;
+}

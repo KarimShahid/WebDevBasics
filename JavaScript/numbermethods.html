@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Method</title>
+  </head>
+  <body>
+    <script>
+      const x = 34.3456732;
+      // toFixed() is used to show many digits to be printed after decimal point
+      document.write(`${x.toFixed(2)} <br>`);
+      //   will round off and oome
+      document.write(`${x.toFixed(4)} <br>`);
+
+      //   toPrecision() is used to show how many digits to be printed as a whole
+      document.write(`${x.toPrecision(3)} <br>`);
+
+      //   toExponential()
+      document.write(`${x.toExponential(3)} <br>`);
+
+      //   to convert string into number use the folowing
+      // Number()
+      // parseInt() -> always returns Integer (not float)
+      // parseFloat() -> return Float number as well as Integer
+
+      document.write(parseInt("12 Years  <br>"));
+      document.write(`<br>`);
+      document.write(parseFloat("12.999 Years") + "<br>");
+      document.write(parseFloat("Hellow World"));
+    </script>
+  </body>
+</html>

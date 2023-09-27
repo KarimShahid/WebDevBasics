@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [5, 15, 30, 24, 11, 90, 800];
+      const total = numbers.reduce((accumulator, currentvalue) => {
+        return accumulator + currentvalue;
+        // a = 5
+        // c = 15
+        // a = 20, c=30
+        // a = 50, c=24
+        // a= 74, c=11
+        // a=85, c=90
+        //  a= 175, c=800
+        // a=975
+      });
+      document.write(total);
+      document.write("<br>");
+
+      // function that subtracts all array elements from given number
+      // 15000 - 1800 - 2000 - 3000 - 5000 - 500
+      const expenses = [1800, 2000, 3000, 5000, 500];
+      const salary = 15000;
+      let remaining = expenses.reduce(
+        (accumulator, currentValue) => accumulator - currentValue,
+        salary
+      );
+
+      document.write(remaining);
+    </script>
+  </body>
+</html>

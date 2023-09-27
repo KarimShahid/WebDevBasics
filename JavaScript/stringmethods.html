@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Methods</title>
+  </head>
+  <body>
+    <script>
+      const text = "welcome to dursikshya to read JavaScript programming";
+      document.write(`${text} </br>`);
+
+      //   to count rhe number of char in a string
+      document.write(`${text.length}<br>`);
+
+      //   to find the position of particular string in a string use indexOf()
+      document.write(`${text.indexOf("to")} <br>`);
+      document.write(`${text.search("to")} <br>`);
+
+      //   to find the last position of repeated string in a string use lastIndexOf()
+      document.write(`${text.lastIndexOf("to")} <br>`);
+
+      //   to uppercase
+      document.write(`${text.toUpperCase()} <br>`);
+      // to lowercase
+      document.write(`${text.toLowerCase()} <br>`);
+
+      //   to replace
+      document.write(`${text.replace("read", "learn")} <br>`);
+      // word to replace is 1st then new word is 2nd
+      // will work only 1 word
+
+      // replace all words
+      document.write(`${text.replaceAll("to", "toooo")} <br>`);
+
+      //   substring -> small part of a string
+      // slice (start, end) -> start(0,20)
+      // substring (start,end) -> substring(5,20)
+      // substr(star, length) -> substr(5,20)
+      // substr means -> starts from 5th index and needs to have 20 characters
+
+      document.write(`${text.slice(0, 21)}...... <br>`);
+      document.write(`${text.substring(5, 21)} <br>`);
+      document.write(`${text.substr(5, 21)} <br>`);
+
+      //   chartAt()
+      var str = "This is string";
+      document.write("str.charAt(0) is:" + str.charAt(0));
+      document.write(" <br> str.charAt(1) is:" + str.charAt(1) + "<br>");
+      document.write(`str.charAt(2) is: ${str.charAt(2)}` + "<br>");
+      document.write(
+        `${str.charAt(0)}` +
+          `${str.charAt(1)}` +
+          str.charAt(2) +
+          str.charAt(3) +
+          "<br>"
+      );
+      // charCodeAt() return UTF value
+      document.write("str.charCode(3) is: " + str.charCodeAt(3));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperHero API</title>
+    <style>
+      body {
+        width: 100%;
+        text-align: center;
+      }
+      .container {
+        display: inline-block;
+        /* width: 100%; */
+        margin: auto;
+        /* text-align: center; */
+        /* border: 1px solid black; */
+      }
+      .stats {
+        list-style-type: none;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Super Hero App 🦸</h1>
+      <p>You can search your favourite super hero</p>
+      <input type="text" id="searchInput" placeholder="Ex: Ironman" />
+      <button id="search-name">Search</button>
+      <button id="new-hero">Random Hero</button>
+      <br />
+      <div>
+        <h2 class="name"></h2>
+      </div>
+      <div id="heroImage"><img src="" alt="" /></div>
+      <div class="stats"></div>
+    </div>
+    <script>
+      const token = "5606798252739344";
+      const baseUrl = `https://superheroapi.com/api.php/${token}`;
+
+      // to get random ID of heros
+      const randomHero = () => {
+        const numberOfHeros = 731;
+        return Math.ceil(Math.random() * numberOfHeros);
+      };
+
+      const newHero = document.getElementById("new-hero");
+      const heroImageDiv = document.getElementById("heroImage");
+      const searchNameBtn = document.getElementById("search-name");
+      const searchInput = document.getElementById("searchInput");
+      const superHeroName = document.querySelector(".name");
+      const superHeroStats = document.querySelector(".stats");
+
+      // for Random Super Hero
+      const getSuperHero = (id) => {
+        fetch(` ${baseUrl}/${id}`)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            getStats(json);
+            // const name = `<h2> ${json.name}</h2>`
+            // heroImageDiv.innerHTML = `${name} <img src = "${json.image.url}" height = 200 width = 200/>`;
+
+            // heroImageDiv.innerHTML += `<img src = "${json.image.url}" height = 200 width = 200/>`;
+          });
+      };
+
+      // inserting emoji in the object (obj)
+      const objToEmoji = {
+        intelligence: "🧠",
+        strength: "💪",
+        speed: "⚡",
+        durability: "🩹",
+        power: "🏋️",
+        combat: "⚔️",
+      };
+
+      // Getting the stats of the superHero
+      const getStats = (character) => {
+        // superHeroStats.innerHTML = "";
+        const obj = Object.keys(character.powerstats)
+          .map(function (f) {
+            return `
+          <li> ${
+            objToEmoji[f]
+          } ${f.toUpperCase()}: ${character.powerstats[f]} </li>`;
+          })
+          .join(" ");
+        console.log(obj);
+        superHeroName.innerText = ` ${character.name}`;
+        heroImageDiv.innerHTML = ` <img src = "${character.image.url}" height = 200 width = 200/> `;
+        superHeroStats.innerHTML = `${obj}`;
+        // console.log(obj);
+      };
+
+      // for searching super hero
+      const getSearcSuperHero = (name) => {
+        console.log(searchInput.value);
+        fetch(` ${baseUrl}/search/${name}`)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            const hero = json.results[0];
+            console.log(hero);
+            getStats(hero);
+          });
+      };
+      newHero.onclick = () => getSuperHero(randomHero());
+      searchNameBtn.onclick = () => getSearcSuperHero(searchInput.value);
+    </script>
+  </body>
+</html>

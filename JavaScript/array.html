@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <pre>
+        Array -> Collection of homogenous objects
+    </pre>
+    <script>
+      const fruits = ["orange", "mango", "apple", "cherry", "guava"];
+      document.writeln(`${fruits} <br>`);
+      //   to access single element from an array use indexing
+      document.write(`${fruits[0]} <br>`);
+
+      // to count lnegth of array
+      document.write(`${fruits.length} <br>`);
+
+      for (i = 0; i < fruits.length; i++) {
+        document.write(fruits[i]);
+        document.write("<br>");
+      }
+
+      //   pop() -> removes last element from an array
+      fruits.pop();
+      document.write(fruits + "<br>");
+
+      //   push() -> add new elements in an array at last position
+      fruits.push("grapes");
+      document.write(fruits);
+      document.write("<br>");
+
+      //   shift() -> Rmeoves first element from an array
+      fruits.shift();
+      document.write(fruits);
+      document.write("<br>");
+
+      //   unshift() -> add new element in array at the first position
+      fruits.unshift("kiwi");
+      document.write(fruits);
+      document.write("<br>");
+
+      //   splice() -> will add or remove one or more than one element from array at any specific position
+      fruits.splice(3, 0, "pineapple", "watermelon");
+      //   3 means add or remove at 3rd position
+      //  0 is no of elements removed
+      document.write(fruits);
+      document.write("<br>");
+
+      //   sort() -> ascending order
+      fruits.sort();
+      document.write(fruits);
+      document.write("<br>");
+
+      //   reverse() -> reverses element in an array
+      fruits.reverse();
+      document.write(`${fruits} <br>`);
+    </script>
+  </body>
+</html>

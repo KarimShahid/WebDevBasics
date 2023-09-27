@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <pre>
+        localStorage is used to store the value in the web browser.
+        Stays in for infinite time until data is removed. 
+        limoited time is sessionStorage
+    </pre>
+    <script>
+      localStorage.setItem("test", "this is a localStorage topic");
+      const result = localStorage.getItem("test");
+      console.log(`${result}<br>`);
+      document.write(`${result}<br>`);
+
+      //   use button to remove the key
+
+      // Json -> JS object notation
+      const student = {
+        firstName: "shyam",
+        lastName: "thakuri",
+        age: "30",
+        gender: "male",
+        subject: ["php", "laravel", "mysql", "jenkins"],
+      };
+      //   localStorage.setItem("details", student);
+      const obj_toString = JSON.stringify(student);
+      localStorage.setItem("data", obj_toString);
+
+      document.write(localStorage.getItem("data"));
+
+      //   convert str to object
+      const str_to_Object = JSON.parse(localStorage.getItem("data"));
+      document.write(str_to_Object);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouseover and mouseout</title>
+  </head>
+  <style>
+    .container {
+      height: 200px;
+      width: 400px;
+      background-color: steelblue;
+      color: aliceblue;
+    }
+  </style>
+  <body>
+    <div class="container" onmouseover="demo()" onmouseout="myDemo()">
+      <h1>mouseover and mouseout effects</h1>
+    </div>
+
+    <script>
+      const demo = () => {
+        document.querySelector("h1").innerHTML = "This is mouse over";
+        document.querySelector(".container").style.backgroundColor = "red";
+      };
+      const myDemo = () => {
+        document.querySelector("h1").innerHTML = "This is mouse out";
+        document.querySelector(".container").style.backgroundColor =
+          "steelblue";
+      };
+    </script>
+  </body>
+</html>

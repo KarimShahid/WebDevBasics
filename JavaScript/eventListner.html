@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even Listner</title>
+  </head>
+  <body>
+    <button id="btn">Click</button>
+    <h2 id="result"></h2>
+
+    <script>
+      const btn = document.getElementById("btn");
+      // btn.addEventListener("click", demoFunction);
+      // function demoFunction() {
+      //   document.getElementById("result").innerHTML = new Date();
+      // }
+      btn.addEventListener("click", function () {
+        console.log("HEyyOPOO");
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key.toUpperCase() == "Q") {
+          console.log("You pressed Q");
+        } else {
+          console.log("Not Q");
+        }
+      });
+
+      //   removeEvent Listner
+    </script>
+  </body>
+</html>

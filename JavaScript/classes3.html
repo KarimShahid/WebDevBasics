@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes 3</title>
+  </head>
+  <body>
+    <input type="text" id="amount" />
+    <button id="deposit">Deposit</button>
+    <!-- <input type="text" id="amount" /> -->
+    <button id="withdraw">widthdraw</button>
+    <div class="balance">
+      <p>Balance:0</p>
+    </div>
+
+    <script>
+      class Bank {
+        constructor(balance) {
+          this.balance = balance;
+        }
+
+        withdraw(amount) {
+          if (this.balance - amount < 0) {
+            console.log(`❌ cannot withdraw`);
+            return;
+          }
+          this.balance -= amount;
+          console.log({ balance: this.balance });
+        }
+
+        deposit(amount) {
+          //   let a;
+          this.balance += amount;
+          console.log({ balance: this.balance });
+          //   return this.balance;
+        }
+      }
+      const nibl = new Bank(0);
+      //   console.log(nibl.balance);
+      //   nibl.deposit(100);
+      //   nibl.withdraw(100);
+      //   nibl.withdraw(100);
+      //   nibl.withdraw(100);
+      //   nibl.deposit(100);
+      //   console.log(nibl.balance);
+
+      //   For DOM
+      const depositBtn = document.getElementById("deposit");
+      const withdrawBtn = document.getElementById("withdraw");
+      const amountInput = document.getElementById("amount");
+      const balanceText = document.querySelector(".balance");
+
+      depositBtn.onclick = () => {
+        const amount = Number(amountInput.value);
+        nibl.deposit(amount);
+        balanceText.innerText = `Balance:  ${nibl.balance}`;
+      };
+
+      withdrawBtn.onclick = () => {
+        nibl.withdraw(Number(amountInput.value));
+        balanceText.innerText = `Balance:  ${nibl.balance}`;
+      };
+    </script>
+  </body>
+</html>

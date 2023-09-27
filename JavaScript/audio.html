@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio</title>
+  </head>
+  <body>
+    <audio
+      src="sounds/Piston Sound - Gunshot Sound - Bgm.m4r"
+      style="display: none"
+      type="audio/mp4"
+      id="punch"
+    ></audio>
+
+    <audio
+      src="sounds/windows error.m4r"
+      style="display: none"
+      type="audio/mp4"
+      id="error"
+    ></audio>
+    Hello
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (e.key.toUpperCase() == "Q") {
+          console.log("Pressed Q");
+          document.getElementById("punch").play();
+          document.getElementById("punch").currentTime = 0;
+        } else if (e.key.toUpperCase() == "S") {
+          console.log("stop");
+          document.getElementById("error").pause();
+          //   document.getElementById("punch").pause();
+          //   document.getElementById("punch").currentTime = 0;
+        } else {
+          console.log("Not Q");
+          document.getElementById("error").play();
+          document.getElementById("error").currentTime = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

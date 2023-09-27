@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+  </head>
+  <style>
+    .container {
+      height: 300px;
+      width: 600px;
+      margin: auto;
+    }
+    .container img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div class="container" onmouseover="stops()" onmouseout="starts()">
+      <img src="/images/Amazon.jpeg" alt="" id="images" />
+      <button onclick="previous()" class="left">&lt;</button>
+      <button onclick="next()" class="right">&gt;</button>
+    </div>
+
+    <script src="imageslider.js"></script>
+  </body>
+</html>

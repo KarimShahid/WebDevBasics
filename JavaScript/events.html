@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      h5 {
+        display: inline-block;
+      }
+      /* h5.changes {
+        background: none !important;
+      } */
+    </style>
+  </head>
+  <body>
+    <pre>
+        onclick, ondblclick, onmousehover, onmouseout, onsubmit, onchange,
+        onkeyup, onkeydown, onload, onmousemove, 
+    </pre>
+    <button onclick="demo()">CLick to see the result</button>
+    <button ondblclick="dd()">Double Click Me</button>
+    <button onclick="changeColor()">Names</button>
+    <button onclick="backgroundColor()">Change the background color</button>
+
+    <h2 id="result"></h2>
+    <h3 id="time"></h3>
+    <h4 id="name">Names!</h4>
+    <h5 id="colors">Change Colors</h5>
+    <!-- events need function -->
+    <script>
+      // defing the function
+      const demo = () => {
+        // document.write(new Date());
+        document.getElementById("result").innerHTML = new Date();
+        // the above code use DOM
+      };
+
+      const dd = () => {
+        document.getElementById("time").innerHTML = new Date();
+      };
+
+      function changeColor() {
+        const name = document.querySelector("#name");
+        name.style.color = "red";
+      }
+
+      // const backgroundColor = () => {
+      //   document.getElementById("colors").style.backgroundColor = "red";
+      // };
+
+      // Change Background color and chnage it back
+      function backgroundColor() {
+        const h5 = document.querySelector("#colors");
+        if (h5.className == "") {
+          h5.style.backgroundColor = "red";
+          h5.className = "changes";
+        } else {
+          h5.style = "none";
+          h5.className = "";
+          // h5.style.color = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

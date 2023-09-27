@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const news = [
+        { newsTitle: "First Title", newsContent: "This is the news" },
+        {
+          newsTitle: "Second Title",
+          newsContent: "Second content of the news",
+        },
+      ];
+
+      showNews = () => {
+        setInterval(() => {
+          let result = "";
+          news.forEach((post) => {
+            result += ` <li> ${post.newsTitle}
+                    <ul> 
+                        <li>${post.newsContent} </li>
+                    </ul>
+                    </li>`;
+          });
+          document.querySelector("div").innerHTML = result;
+        }, 2000);
+      };
+
+      const addNews = (data) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            news.push(data);
+            let error = false;
+            if (!error) {
+              resolve();
+            } else {
+              reject("Error: Something went wrong");
+            }
+          }, 3000);
+        });
+      };
+
+      //   call the funtion addNews()
+      addNews({
+        newsTitle: "Third Title",
+        newsContent: "This is added from push method",
+      })
+        .then(showNews)
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>

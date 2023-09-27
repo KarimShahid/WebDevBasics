@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [10, 20, 30, 40, 50, 100];
+      //   function demoFunc(num) {
+      //     document.write(`<li>${num}</li>`);
+      //   }
+      //   numbers.map(demoFunc);
+
+      // function inside function is anonymous function
+      //   anonymous functions dont need parathesis to call them
+      //   numbers.map(function (num) {
+      //     document.write(`<li>${num}</li>`);
+      //   });
+
+      numbers.map((num) => {
+        document.write(`<li>${num}</li>`);
+      });
+      document.write("<br>");
+
+      const fruits = ["orange", "mango", "apple", "cherry", "guava"];
+      fruits.map(function (f) {
+        document.write(`<li>${f}</li>`);
+      });
+      document.write("<br>");
+
+      // Arrow Function
+      //   const demoFunc=num=>{
+      //     document.write(`<li>${num}</li>`);
+      //   }
+      //   numbers.map(demoFunc)
+
+      let firstNames = ["wonder", "spider", "ant", "iron"];
+      let male = "man";
+      let female = "woman";
+
+      const superheros = firstNames.map((fname, index) => {
+        if (index == 0) {
+          return fname + female;
+        } else {
+          return fname + male;
+        }
+      });
+      console.log(superheros);
+
+      let avengers = [
+        { name: "steve rogers", heroName: "captain america" },
+        { name: "tony stark", heroName: "iron man" },
+        { name: "bruce banner", heroName: "the hulk" },
+        { name: "peter parker", heroName: "spiderman" },
+        { name: "tchalla", heroName: "black panther" },
+      ];
+
+      for (i of avengers) {
+        let { name } = i;
+        console.log(name);
+      }
+
+      avengers.map((n) => {
+        console.log(n.name);
+      });
+
+      //   forEach()
+      fruits.forEach(function (ff) {
+        document.writeln(ff);
+        document.write("<br>");
+      });
+      document.write("<br>");
+
+      fruits.forEach((number) => document.writeln(`${number} <br>`));
+      document.write("<br>");
+    </script>
+  </body>
+</html>

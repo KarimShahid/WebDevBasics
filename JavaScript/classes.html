@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLasses</title>
+  </head>
+  <body>
+    <script>
+      class car {
+        constructor(name, color, topSpeed) {
+          this.name = name;
+          this.color = color;
+          this.topSpeed = topSpeed;
+          this.currentSpeed = 0;
+        }
+
+        // getters and setters
+        getCurrentSpeed() {
+          return currentSpeed;
+        }
+
+        // 0 to 60mph method
+        zeroToSixty() {
+          setTimeout(() => {
+            console.log("That was fast!");
+            this.currentSpeed = 60;
+            console.log(this.currentSpeed);
+          }, 2900);
+        }
+
+        // Methods
+        drive(speed = 10) {
+          //Speed = 10 is default argument
+          //   console.log("drove 2 miles");
+          this.currentSpeed += speed;
+          console.log(`Speed is currently ${this.currentSpeed} mph`);
+        }
+
+        break() {
+          console.log("Breaking");
+          this.currentSpeed -= 10;
+
+          //   console.log(this.currentSpeed);
+        }
+
+        stop() {
+          console.log("Stopping!");
+          this.currentSpeed = 0;
+          console.log(this.currentSpeed);
+        }
+      }
+
+      const ferrari = new car("ferrari", "red", 250);
+      const porsche = new car("Porsche", "yellow", 250);
+      console.log(porsche.name);
+      console.log(porsche.color);
+      //   const nums = [1, 2, 3, 4, 5];
+      //   nums.forEach((element) => {
+      //     porsche.drive();
+      //   });
+      porsche.drive(40);
+      porsche.drive(80);
+      porsche.zeroToSixty();
+      porsche.stop();
+      console.log("");
+
+      //   console.log(ferrari.name);
+      //   console.log(ferrari.color);
+      //   console.log(ferrari.topSpeed);
+
+      //   calling the method
+      //   console.log(ferrari.currentSpeed);
+      //   ferrari.drive();
+      //   ferrari.break();
+      //   ferrari.drive();
+      //   console.log(ferrari.currentSpeed);
+
+      //   ferrari.zeroToSixty();
+      //   console.log(ferrari.currentSpeed);
+      //   ferrari.break();
+
+      ferrari.drive();
+      ferrari.drive();
+      ferrari.drive();
+      ferrari.drive();
+      ferrari.drive();
+      console.log(ferrari.currentSpeed);
+      ferrari.break();
+      console.log(ferrari.currentSpeed);
+      ferrari.stop();
+    </script>
+  </body>
+</html>

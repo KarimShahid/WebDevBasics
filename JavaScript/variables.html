@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+  </head>
+  <body>
+    <pre>
+    Variables store value
+    declared by using either var ot let or const 
+    javascript keyword, predefined methods, numeric value at the beginning and special character
+    except _ must be avoided while naming the varaible </pre
+    >
+    <!-- let is for dynamic and local variable -- Dynamic is for loop
+    const is for constant variable
+    var is for global variable-->
+    <script>
+      var x = 20;
+      document.write(x);
+      document.write(`<br>The value of X is ${x} <br>`);
+      // `` is called backticks or template literals
+
+      let y = 50;
+      document.write(`The value of Y is ${y} <br>`);
+
+      const text = "Hello World!";
+      document.write(`${text} <br>`);
+
+      //   to check datatype in js
+      document.write(typeof x);
+      document.write("<br>");
+      document.write(typeof text);
+      document.write("<br>");
+      document.write(`DataType is ${typeof y} <br>`);
+      document.write(`Sum of X and Y is ${y + x} <br>`);
+
+      var z = x + y;
+      document.write(z);
+    </script>
+  </body>
+</html>

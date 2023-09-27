@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakout Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .grid {
+        width: 560px;
+        height: 300px;
+        border: 1px solid black;
+        margin: auto;
+        position: relative;
+      }
+      .block {
+        position: absolute;
+        width: 100px;
+        height: 20px;
+        background-color: blue;
+        left: 50px;
+        bottom: 50px;
+      }
+      .user {
+        position: absolute;
+        width: 100px;
+        height: 20px;
+        background-color: red;
+      }
+      .ball {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: aquamarine;
+        position: absolute;
+      }
+      .container {
+        text-align: center;
+      }
+      #score {
+        margin: 15px 0;
+      }
+      .result {
+        margin: 0 0 15px 0;
+      }
+
+      .restartBtn {
+        position: absolute;
+        top: 140px;
+        left: 231px;
+        border-radius: 10px;
+        color: #fff;
+        padding: 15px;
+        background-color: #0a0a23;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><h1 id="score">0</h1></div>
+      <div><h1 class="result"></h1></div>
+      <div class="grid"></div>
+    </div>
+
+    <!-- for hitting the blocks -->
+    <audio
+      src="../JavaScript/sounds/Piston Sound - Gunshot Sound - Bgm.m4r"
+      style="display: none"
+      type="audio/mp4"
+      id="hit"
+    ></audio>
+
+    <!-- For winning the game -->
+    <audio
+      src="../JavaScript/sounds/Win.m4r"
+      style="display: none"
+      type="audio/mp4"
+      id="win"
+    ></audio>
+    <!-- for Losing the game -->
+    <audio
+      src="../JavaScript/sounds/windows error.m4r"
+      style="display: none"
+      type="audio/mp4"
+      id="lose"
+    ></audio>
+    <script src="breakout.js"></script>
+  </body>
+</html>
